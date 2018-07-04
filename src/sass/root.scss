@@ -1,0 +1,27 @@
+// Colors
+$tabHeaderColor: #FF4C27;
+$tabHeaderHoverColor: #CCC;
+$tabNavColor: #DDD;
+
+
+.fxcpds-tab-pane {
+
+}
+
+.fxcpds-tab-navbar {
+  background-color: $tabNavColor;
+}
+
+.fxcpds-tab-header {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+
+  .current {
+    background-color: $tabHeaderColor;
+  }
+
+  :hover {
+    background-color: $tabHeaderHoverColor;
+  }
+}
