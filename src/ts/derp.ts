@@ -7,6 +7,7 @@ import {DateFilter} from "./util/filter/DateFilter";
 import {GetPageReadsRequest} from "./request/sales/GetPageReadsRequest";
 import {RawApiResponse} from "./model/RawApiResponse";
 import {FloatPane} from "./UI";
+import {Tab, TabPane} from "./ui/tab/index";
 
 interface RequestCallback {
   (r: XMLHttpRequest): void;
@@ -72,5 +73,9 @@ function getPageReadsOrdered(cb: RequestCallback) {
 getPageReadsOrdered(a => {console.log(RawApiResponse.fromResponseText(a.responseText))});
 
 const pane = new FloatPane();
-pane.tabSet.appendChild(document.createElement("li"));
+const derp = new TabPane();
+const div = document.createElement("div");
+div.innerText = "hello world";
+derp.addTab(new Tab("Test", div));
+pane.appendChild(derp);
 document.body.appendChild(pane);
